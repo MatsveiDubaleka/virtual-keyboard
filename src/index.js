@@ -14,8 +14,8 @@ container.appendChild(heading);
 
 // Textarea
 const textarea = document.createElement('textarea');
+textarea.autofocus = true;
 textarea.classList.add('textarea');
-textarea.focus();
 container.appendChild(textarea);
 
 // Switch and Windows paragraphs
@@ -150,23 +150,23 @@ for (let i = 0; i < activeKeyboard.length; i += 1) {
 // DOM Keys
 const keysKeyboard = document.querySelectorAll('.keys');
 
-// window.addEventListener('keydown', (e) => {
-//   for (let i = 0; i < keysKeyboard.length; i++) {
-//     if (e.key === keysKeyboard[i].getAttribute('id')) {
-//       keys[i].classList.add('active');
-//     }
-//     console.log(e.key);
-//   }
-// });
+window.addEventListener('keydown', (e) => {
+  for (let i = 0; i < keysKeyboard.length; i++) {
+    if (e.key === keysKeyboard[i].getAttribute('id')) {
+      keys[i].classList.add('active');
+    }
+  }
+  console.log(e.key);
+});
 
-// window.addEventListener('keyup', (e) => {
-//   for (let i = 0; i < keysKeyboard.length; i++) {
-//     if (e.key === keysKeyboard[i].getAttribute('id')) {
-//       keys[i].classList.remove('active');
-//     }
-//     console.log(e.key);
-//   }
-// });
+window.addEventListener('keyup', (e) => {
+  for (let i = 0; i < keysKeyboard.length; i++) {
+    if (e.key === keysKeyboard[i].getAttribute('id')) {
+      keys[i].classList.remove('active');
+    }
+  }
+  console.log(e.key);
+});
 
 // Color modes
 nightMode.addEventListener('click', () => {

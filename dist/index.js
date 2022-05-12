@@ -831,8 +831,8 @@ container.appendChild(heading);
 
 // Textarea
 const textarea = document.createElement('textarea');
+textarea.autofocus = true;
 textarea.classList.add('textarea');
-textarea.focus();
 container.appendChild(textarea);
 
 // Switch and Windows paragraphs
@@ -972,8 +972,8 @@ window.addEventListener('keydown', (e) => {
     if (e.key === keysKeyboard[i].getAttribute('id')) {
       _keys__WEBPACK_IMPORTED_MODULE_1__["default"][i].classList.add('active');
     }
-    console.log(e.key);
   }
+  console.log(e.key);
 });
 
 window.addEventListener('keyup', (e) => {
@@ -981,8 +981,8 @@ window.addEventListener('keyup', (e) => {
     if (e.key === keysKeyboard[i].getAttribute('id')) {
       _keys__WEBPACK_IMPORTED_MODULE_1__["default"][i].classList.remove('active');
     }
-    console.log(e.key);
   }
+  console.log(e.key);
 });
 
 // Color modes
