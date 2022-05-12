@@ -261,9 +261,9 @@ const keys = {
       keyCode: 186,
     },
     {
-      key: '\'',
-      keyCaps: '\'',
-      keyShift: '\'',
+      key: "'",
+      keyCaps: "'",
+      keyShift: "'",
       keyCode: 222,
     },
     {
@@ -345,9 +345,9 @@ const keys = {
       keyShift: 'Shift',
     },
     {
-      key: 'Ctrl',
-      keyCaps: 'Ctrl',
-      keyShift: 'Ctrl',
+      key: 'Control',
+      keyCaps: 'Control',
+      keyShift: 'Control',
       keyCode: 17,
     },
     {
@@ -397,7 +397,7 @@ const keys = {
     {
       key: '2',
       keyCaps: '2',
-      keyShift: '\'',
+      keyShift: "'",
       keyCode: 50,
     },
     {
@@ -719,9 +719,9 @@ const keys = {
       keyCode: 39,
     },
     {
-      key: 'Ctrl',
-      keyCaps: 'Ctrl',
-      keyShift: 'Ctrl',
+      key: 'Control',
+      keyCaps: 'Control',
+      keyShift: 'Control',
       keyCode: 17,
     },
     {
@@ -925,56 +925,65 @@ function createRow(rowNum, key) {
 // Test
 const englishKeyboard = _keys__WEBPACK_IMPORTED_MODULE_1__["default"].en;
 const russianKeyboard = _keys__WEBPACK_IMPORTED_MODULE_1__["default"].ru;
-const activeKeyboard = englishKeyboard;
 
-const keyCaps = null;
 const keyShift = null;
-
 let rowNum = null;
 
-for (let i = 0; i < activeKeyboard.length; i += 1) {
-  let btnKey = null;
-  const btnKeyCode = activeKeyboard[i].keyCode;
+function renderKeyboard(activeKeyboard = englishKeyboard, CAPS = null) {
+  for (let i = 0; i < activeKeyboard.length; i += 1) {
+    let btnKey = null;
+    const btnKeyCode = activeKeyboard[i].keyCode;
 
-  // Checking is Caps is pressed;
-  if (keyCaps === true) {
-    btnKey = activeKeyboard[i].keyCaps;
-  } else {
-    btnKey = activeKeyboard[i].key;
-  }
+    // Checking is Caps is pressed;
+    if (CAPS === true) {
+      btnKey = activeKeyboard[i].keyCaps;
+    } else {
+      btnKey = activeKeyboard[i].key;
+    }
 
-  // Checking is Shift is pressed;
-  if (keyShift === true) {
-    btnKey = activeKeyboard[i].keyShift;
-  } else {
-    btnKey = activeKeyboard[i].key;
-  }
+    // Checking is Shift is pressed;
+    if (keyShift === true) {
+      btnKey = activeKeyboard[i].keyShift;
+    } else {
+      btnKey = activeKeyboard[i].key;
+    }
 
-  if (btnKeyCode === 9) {
-    rowNum = 1;
-  } else if (btnKeyCode === 20) {
-    rowNum = 2;
-  } else if (btnKeyCode === 16) {
-    rowNum = 3;
-  } else if (btnKeyCode === 17) {
-    rowNum = 4;
-  } else if (btnKeyCode === 192) {
-    rowNum = 0;
+    if (btnKeyCode === 9) {
+      rowNum = 1;
+    } else if (btnKeyCode === 20) {
+      rowNum = 2;
+    } else if (btnKeyCode === 16) {
+      rowNum = 3;
+    } else if (btnKeyCode === 17) {
+      rowNum = 4;
+    } else if (btnKeyCode === 192) {
+      rowNum = 0;
+    }
+    createRow(rowNum, btnKey);
   }
-  createRow(rowNum, btnKey);
+}
+renderKeyboard();
+
+function deleteKeyboard() {
+  const rows = document.querySelectorAll('.keyboard__row');
+  for (let i = 0; i < rows.length; i++) {
+    rows[i].remove();
+  }
 }
 
 // DOM Keys
 const keysKeyboard = document.querySelectorAll('.keys');
-// console.log(keysKeyboard);
 window.addEventListener('keydown', (e) => {
   for (let i = 0; i < keysKeyboard.length; i++) {
     if (e.key === keysKeyboard[i].textContent) {
       keysKeyboard[i].classList.add('active');
     }
   }
-  console.log(e.key);
+  // console.log(e.key);
 });
+
+const activeLanguage = englishKeyboard;
+let keyCaps = false;
 
 window.addEventListener('keyup', (e) => {
   for (let i = 0; i < keysKeyboard.length; i++) {
@@ -982,7 +991,20 @@ window.addEventListener('keyup', (e) => {
       keysKeyboard[i].classList.remove('active');
     }
   }
-  console.log(e.key);
+
+  if (e.key === 'CapsLock') {
+    keyCaps = true;
+  }
+
+  if (e.key === 'Shift' || e.key === 'Control') {
+    if (activeLanguage === englishKeyboard) {
+      deleteKeyboard();
+      renderKeyboard(russianKeyboard);
+    } else if (activeLanguage === russianKeyboard) {
+      deleteKeyboard();
+      renderKeyboard(englishKeyboard);
+    }
+  }
 });
 
 // Color modes
@@ -998,11 +1020,14 @@ nightMode.addEventListener('click', () => {
   }
 });
 
-const rows = document.querySelectorAll('keyboard__row');
-
 inputColor.addEventListener('input', () => {
   for (let i = 0; i < keysKeyboard.length; i++) {
     keysKeyboard[i].style.color = inputColor.value;
+  }
+  const rows = document.querySelectorAll('.keyboard__row');
+
+  for (let i = 0; i < rows.length; i++) {
+    rows[i].style.backgroundColor = inputColor.value;
   }
 });
 

@@ -235,9 +235,9 @@ const keys = {
       keyCode: 186,
     },
     {
-      key: '\'',
-      keyCaps: '\'',
-      keyShift: '\'',
+      key: "'",
+      keyCaps: "'",
+      keyShift: "'",
       keyCode: 222,
     },
     {
@@ -319,9 +319,9 @@ const keys = {
       keyShift: 'Shift',
     },
     {
-      key: 'Ctrl',
-      keyCaps: 'Ctrl',
-      keyShift: 'Ctrl',
+      key: 'Control',
+      keyCaps: 'Control',
+      keyShift: 'Control',
       keyCode: 17,
     },
     {
@@ -371,7 +371,7 @@ const keys = {
     {
       key: '2',
       keyCaps: '2',
-      keyShift: '\'',
+      keyShift: "'",
       keyCode: 50,
     },
     {
@@ -693,9 +693,9 @@ const keys = {
       keyCode: 39,
     },
     {
-      key: 'Ctrl',
-      keyCaps: 'Ctrl',
-      keyShift: 'Ctrl',
+      key: 'Control',
+      keyCaps: 'Control',
+      keyShift: 'Control',
       keyCode: 17,
     },
     {
