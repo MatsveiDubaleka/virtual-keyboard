@@ -12,5 +12,7 @@ module.exports = {
   rules: {
     'import/prefer-default-export': 'off',
     "no-unused-vars": "off",
+    'no-plusplus': 'off',
+    "linebreak-style": 0
   }
 }

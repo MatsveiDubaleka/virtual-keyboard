@@ -1,96 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
   outline: none;
 }
 
 body {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: 1.5rem;
-  font-family: 'Arial Narrow', sans-serif;
-  font-weight: 700;
-  color: springgreen;
+  font-family: 'Lato', sans-serif;
+  transition: .2s;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0 10px;
 }
 
-.keyboard {
-  position: fixed;
-  left: 0;
-  bottom: 0;
+.keyboard__wrapper {
+  max-width: 1008px;
   width: 100%;
-  padding: 5px 0;
-  background-color: seagreen;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-  user-select: none;
-  height: 300px;
-}
-
-.keyboard__keys {
-  text-align: center;
-}
-
-.keyboard__key {
-  height: 45px;
-  width: 6%;
-  max-width: 90px;
-  margin: 3px;
-  border-radius: 4px;
-  border: none;
-  background: rgba(255,255,255, 0.2);
-  color: azure ;
-  font-size: 1.05rem;
-  outline: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  vertical-align: center;
-  padding: 0;
+  background-color: #e7e7e7;
+  overflow: hidden;
   position: relative;
+  order: 2;
 }
 
-.keyboard__key:hover {
-  background: rgba(255,255,255, 0.12);
-
+.keyboard__row {
+  display: flex;
 }
 
-.keyboard__key:active {
-  background: cadetblue;
-  transition: 0.5s;
+.windows, .switch {
+  margin: 10px 0;
+  padding: 10px 0;
 }
 
-.keyboard__key--wide {
-  width: 12%;
+.keys {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  transition: .2s;
 }
 
-.keyboard__key--extra-wide {
-  width: 36%;
-  max-width: 500px;
+.backspace__key {
+  width: 120px;
 }
 
-.keyboard__key--activatable::after {
-  content: '';
-  top: 10px;
-  right: 10px;
+.tab__key {
+  width: 90px;
+}
+
+.slash__key {
+  width: 90px;
+}
+
+.capslock__key {
+  width: 120px;
+}
+
+.shift__key {
+  width: 124px;
+}
+
+.enter__key {
+  width: 120px;
+}
+
+.space__key {
+  max-width: 600px;
+  width: 100%;
+}
+
+.textarea {
+  max-width: 1008px;
+  width: 100%;
+  height: 90px;
+  margin-bottom: 30px;
+  border: none;
+  outline: none;
+  font-size: 26px;
+  background-color: #f7f7f7;
+  padding-left: 10px;
+  transition: .2s;
+}
+
+.keys.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.keys.remove {
+  animation: keys__animation 0.5s forwards;
+}
+
+@keyframes keys__animation {
+  0% {
+    background-color: #333;
+    color: #fff;
+  }
+
+  100% {
+    background-color: #fff;
+    color: #000;
+  }
+}
+
+body.active {
+  background-color: rgb(54,54,54);
+}
+
+.night__mode {
+  width: 80px;
+  height: 30px;
+  background-color: #e6e6e6;
   position: absolute;
-  width: 8px;
-  height: 8px;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 50%;
+  right: 25px;
+  top: 25px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: .2s;
 }
 
-.keyboard__key--active::after {
-  background: #00ff00;
+  .night__mode.active {
+    background-color: #222222;
+  }
+
+.toggle__circle {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(54,54,54);
+  border-radius: 50px;
+  margin: 0 5px;
+  position: absolute;
+  left: 0;
+  transition: .2s;
+}
+
+  .toggle__circle.active {
+    left: 60%;
+    background-color: #fff;
+  }
+
+.keyboard__wrapp.active {
+  background-color: #585858;
+}
+
+.keys.keys__night {
+  background-color: #3c3c3c;
+  color: #fff;
+}
+
+.textarea.active {
+  background-color: #2b2b2b;
+  color: #fff;
+}
+
+.keys.keys__night.active {
+  background-color: #fff;
+  color: #333;
+}
+
+.keys.keys__night.remove {
+  animation: keys__night__animation 0.5s forwards;
+}
+
+@keyframes keys__night__animation {
+  0% {
+    background-color: #fff;
+    color: #000;
+  }
+
+  100% {
+    background-color: #333;
+    color: #fff;
+  }
+}
+
+.change__light-color {
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  right: 150px;
+  top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.colors__input {
+  width: 100px;
+  height: 50px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+
+.keyboard__lights {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }

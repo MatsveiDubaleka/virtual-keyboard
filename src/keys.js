@@ -163,10 +163,10 @@ const keys = {
       keyCode: 221,
     },
     {
-      key: 'Enter',
-      keyCaps: 'Enter',
-      keyShift: 'Enter',
-      keyCode: 13,
+      key: '\\',
+      keyCode: 220,
+      keyCaps: '\\',
+      keyShift: '|',
     },
     {
       key: 'CapsLock',
@@ -235,22 +235,16 @@ const keys = {
       keyCode: 186,
     },
     {
-      key: "'",
-      keyCaps: "'",
-      keyShift: '"',
+      key: '\'',
+      keyCaps: '\'',
+      keyShift: '\'',
       keyCode: 222,
     },
     {
-      key: 'Up',
-      keyCaps: 'Up',
-      keyShift: 'Up',
-      keyCode: 38,
-    },
-    {
-      key: '\\',
-      keyCaps: '\\',
-      keyShift: '|',
-      keyCode: 220,
+      key: 'Enter',
+      keyCaps: 'Enter',
+      keyShift: 'Enter',
+      keyCode: 13,
     },
     {
       key: 'Shift',
@@ -319,27 +313,21 @@ const keys = {
       keyCode: 191,
     },
     {
-      key: 'Left',
-      keyCaps: 'Left',
-      keyShift: 'Left',
-      keyCode: 37,
-    },
-    {
-      key: 'Down',
-      keyCaps: 'Down',
-      keyShift: 'Down',
-      keyCode: 40,
-    },
-    {
-      key: 'Right',
-      keyCaps: 'Right',
-      keyShift: 'Right',
-      keyCode: 39,
+      key: 'Shift',
+      keyCode: 16,
+      keyCaps: 'Shift',
+      keyShift: 'Shift',
     },
     {
       key: 'Ctrl',
       keyCaps: 'Ctrl',
       keyShift: 'Ctrl',
+      keyCode: 17,
+    },
+    {
+      key: 'Win',
+      keyCaps: 'Win',
+      keyShift: 'Win',
       keyCode: 17,
     },
     {
@@ -353,6 +341,12 @@ const keys = {
       keyCaps: ' ',
       keyShift: ' ',
       keyCode: 32,
+    },
+    {
+      key: 'Alt',
+      keyCaps: 'Alt',
+      keyShift: 'Alt',
+      keyCode: 18,
     },
     {
       key: 'Win',
@@ -377,7 +371,7 @@ const keys = {
     {
       key: '2',
       keyCaps: '2',
-      keyShift: '"',
+      keyShift: '\'',
       keyCode: 50,
     },
     {
