@@ -193,6 +193,10 @@ window.addEventListener('keyup', (e) => {
 document.querySelectorAll('.keys').forEach((key) => {
   key.addEventListener('click', (e) => {
     console.log(e.target.textContent);
+    key.classList.add('active');
+    setTimeout(() => {
+      key.classList.remove('active');
+    }, 200);
     if (e.target.textContent === 'Enter') {
       textarea.textContent += `
       
