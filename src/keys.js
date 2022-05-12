@@ -597,12 +597,6 @@ const keys = {
       keyCode: 222,
     },
     {
-      key: 'Up',
-      keyCaps: 'Up',
-      keyShift: 'Up',
-      keyCode: 38,
-    },
-    {
       key: '\\',
       keyCaps: '\\',
       keyShift: '/',
@@ -673,24 +667,6 @@ const keys = {
       keyCaps: '.',
       keyShift: ',',
       keyCode: 191,
-    },
-    {
-      key: 'Left',
-      keyCaps: 'Left',
-      keyShift: 'Left',
-      keyCode: 37,
-    },
-    {
-      key: 'Down',
-      keyCaps: 'Down',
-      keyShift: 'Down',
-      keyCode: 40,
-    },
-    {
-      key: 'Right',
-      keyCaps: 'Right',
-      keyShift: 'Right',
-      keyCode: 39,
     },
     {
       key: 'Control',

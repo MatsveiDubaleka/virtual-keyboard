@@ -166,7 +166,7 @@ window.addEventListener('keydown', (e) => {
 });
 
 const activeLanguage = englishKeyboard;
-let keyCaps = false;
+// let keyCaps = false;
 
 window.addEventListener('keyup', (e) => {
   for (let i = 0; i < keysKeyboard.length; i++) {
@@ -175,15 +175,15 @@ window.addEventListener('keyup', (e) => {
     }
   }
 
-  if (e.key === 'CapsLock') {
-    keyCaps = true;
-  }
+  // if (e.key === 'CapsLock') {
+  //   renderKeyboard();
+  // }
 
   if (e.key === 'Shift' || e.key === 'Control') {
-    if (activeLanguage === englishKeyboard) {
+    if (document.querySelector('#ё') === null) {
       deleteKeyboard();
       renderKeyboard(russianKeyboard);
-    } else if (activeLanguage === russianKeyboard) {
+    } else if (document.querySelector('#f') === null) {
       deleteKeyboard();
       renderKeyboard(englishKeyboard);
     }
