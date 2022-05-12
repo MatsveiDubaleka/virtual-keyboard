@@ -966,11 +966,11 @@ for (let i = 0; i < activeKeyboard.length; i += 1) {
 
 // DOM Keys
 const keysKeyboard = document.querySelectorAll('.keys');
-
+// console.log(keysKeyboard);
 window.addEventListener('keydown', (e) => {
   for (let i = 0; i < keysKeyboard.length; i++) {
-    if (e.key === keysKeyboard[i].getAttribute('id')) {
-      _keys__WEBPACK_IMPORTED_MODULE_1__["default"][i].classList.add('active');
+    if (e.key === keysKeyboard[i].textContent) {
+      keysKeyboard[i].classList.add('active');
     }
   }
   console.log(e.key);
@@ -978,8 +978,8 @@ window.addEventListener('keydown', (e) => {
 
 window.addEventListener('keyup', (e) => {
   for (let i = 0; i < keysKeyboard.length; i++) {
-    if (e.key === keysKeyboard[i].getAttribute('id')) {
-      _keys__WEBPACK_IMPORTED_MODULE_1__["default"][i].classList.remove('active');
+    if (e.key === keysKeyboard[i].textContent) {
+      keysKeyboard[i].classList.remove('active');
     }
   }
   console.log(e.key);
