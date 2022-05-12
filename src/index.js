@@ -190,6 +190,19 @@ window.addEventListener('keyup', (e) => {
   }
 });
 
+document.querySelectorAll('.keys').forEach((key) => {
+  key.addEventListener('click', (e) => {
+    console.log(e.target.textContent);
+    if (e.target.textContent === 'Enter') {
+      textarea.textContent += `
+      
+      `;
+    } else {
+      textarea.textContent += e.target.textContent;
+    }
+  });
+});
+
 // Color modes
 nightMode.addEventListener('click', () => {
   toggleCircle.classList.toggle('active');
