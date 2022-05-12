@@ -26,7 +26,7 @@ windowsParagraph.classList.add('windows');
 switchParagraph.classList.add('switch');
 
 windowsParagraph.textContent = 'Virtual keyboard was done in OS Windows';
-switchParagraph.textContent = 'To switch languages use left CTRL + left SHIFT';
+switchParagraph.textContent = 'To switch languages use left CTRL';
 
 container.appendChild(windowsParagraph);
 container.appendChild(switchParagraph);
@@ -179,7 +179,7 @@ window.addEventListener('keyup', (e) => {
   //   renderKeyboard();
   // }
 
-  if (e.key === 'Shift' || e.key === 'Control') {
+  if (e.key === 'Control') {
     if (document.querySelector('#ё') === null) {
       deleteKeyboard();
       renderKeyboard(russianKeyboard);
